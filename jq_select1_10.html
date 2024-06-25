@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function(){
+            //jQuery 스타일을 변수로 처리
+            var style_1 = {
+                "background-color":"pink"
+                ,"border":"5px, dashed, green"
+            }
+            var style_2 = {
+                "background-color":"pink"
+                ,"border":"5px, dashed, green"
+            }
+            //클래스 txt에 스타일 변수 적용
+            $(".txt").css(style_1);
+
+            //.prev() : 이전 요소 선택(=내용1에 적용됨)
+            $(".txt").prev().css(style_1);
+            
+            // + , .next() : 다음 요소 선택(=내용3에 적용됨)
+            $(".txt + p").css(style_2);
+            $(".txt + h3").css(style_2);
+            $(".txt").next().next().css(style_2); //다음다음
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <h1>인접 관계 선택자</h1>
+        <p>내용1</p>
+        <p class="txt">내용2</p>
+        <!-- <p>내용3</p> -->
+        <h3>내용3</h3>
+        <p>내용4</p>
+    </div>
+</body>
+</html>

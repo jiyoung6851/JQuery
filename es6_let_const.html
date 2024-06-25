@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var a=1;
+        {
+            var a=2;
+            var b=3;
+        }
+        var a=3;
+        console.log("@# a => "+a);  //a가 1에서 2로 바뀜
+        console.log("@# b => "+b);
+        
+        let aa=1;   //전역변수
+        {
+            let aa=2;   //지역변수
+            let bb=3;
+            console.log("@# bb => "+bb);
+        }
+        //전역변수 출력
+        console.log("@# aa => "+aa);    //a가 1에서 1로 출력
+        //지역변수는 {}안에서만 동작
+        //console.log("@# bb => "+bb);  //오류
+
+        //const x;  //오류 : 값을 초기화 해야함
+        const x=1;
+        //x=2;  //오류 : 재할당 안됨
+        console.log("@# x => "+x);
+        
+        const employee={name:"hong", age:24};   //employee : 객체
+        //employee{}; //오류: 객체 변경 불가
+        employee.name="Kim";    //속성값은 변경 가능
+        console.log("@# employee => "+employee);
+        console.log("@# name, age => "+employee.name+employee.age);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
